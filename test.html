@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuerry</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+          .selected {
+    color: purple;
+  }
+  .highlight {
+    background: yellow;
+  }
+          p {
+    font-size: 150%;
+    cursor: pointer;
+  }
+          span {
+    color: green;
+    cursor: pointer;
+  }
+  div {
+    margin: 3px;
+    width: 80px;
+    display: none;
+    height: 80px;
+    float: left;
+  }
+  #one {
+    background: #f00;
+  }
+  #two {
+    background: #0f0;
+  }
+  #three {
+    background: #00f;
+  }
+          div {
+    background: #de9a44;
+    margin: 3px;
+    width: 80px;
+    height: 40px;
+    display: none;
+    float: left;
+  }
+        h1{
+            background: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+<input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+    <p class="1">
+            If you click on this paragraph
+            you'll see it just fade away.
+          </p>
+    Click me!
+    <button>WHat happened</button>
+    <p>paragraph is gone</p>
+    button.
+    <!-- <button class="hide">Hidden</button> -->
+    <p class="hide">hide me</p>
+    <h1 style="display: none">HA HA HA!!!!</h1>
+    <a href="Hide This one">Hide this one
+    </a>
+    <div></div>
+    <div></div>
+    <div></div>
+<p>;lkasjdlfkj;lkasdff</p>
+<p>;lajsdflkj;jquery    </p>
+<p>adsfadsf</p>
+<p>last of type</p>
+
+    <span>Click here...</span>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <p>Type something and then click or tab out of the input.</p>
+    <input type="text" value="type something">
+
+    <p><b>Test</b> Paragraph.</p>
+<p></p>
+
+
+
+<div>
+        The values stored were
+        <span></span>
+        and
+        <span></span>
+      </div>
+       
+</body>
+
+<script>
+$( document.body ).click(function() {
+  if ( $( "div:first" ).is( ":hidden" ) ) {
+    $( "div" ).show( "slow" );
+  } else {
+    $( "div" ).slideUp();
+  }
+});
+
+ $('button').click(function(){
+     console.log('it works')
+ });
+ $( "a" ).click(function( event ) {
+  event.preventDefault();
+  $( this ).hide();
+});
+$( "button" ).click(function() {
+  $( "h1" ).show( "slow" );
+});
+$( "button" ).click(function() {
+  $( "p" ).toggle();
+});
+$( document.body ).click(function () {
+  if ( $( "div:first" ).is( ":hidden" ) ) {
+    $( "div" ).slideDown( "slow" );
+  } else {
+    $( "div" ).hide();
+  }
+});
+$( "button" ).click(function() {
+  $( "p" ).slideToggle( "slow" );
+});
+$( document.body ).click(function() {
+  $( "div:hidden:first" ).fadeIn( "slow" );
+});
+$( "p.1" ).click(function() {
+  $( "p.1" ).fadeOut( "slow" );
+});
+$( "p" ).last().addClass( "selected" );
+$( "p" ).before( "<b>Latin Words</b>" );
+$( "p" ).after( "<b>Not Hello</b>" );
+$( "p" ).append( "<strong>Stronger</strong>" );
+$( "p" ).click(function() {
+  var htmlString = $( this ).html();
+  $( this ).text( htmlString );
+});
+$( "input" )
+  .change(function() {
+    var $input = $( this );
+    $( "p" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+      ".prop( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+      ".is( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
+  })
+
+$( "input" ).on( "blur", function() {
+  $( this ).val(function( i, val ) {
+    return val.toUpperCase();
+  });
+});
+
+$( "button" ).click(function() {
+  var text = $( this ).text();
+  $( "input" ).val( text );
+});
+var str = $( "p:first" ).text();
+$( "p:last" ).html( str );
+
+$( "div" ).data( "test", { first: 16, last: "pizza!" } );
+$( "span:first" ).text( $( "div" ).data( "test" ).first );
+$( "span:last" ).text( $( "div" ).data( "test" ).last );
+
+
+</script>
+</html>
