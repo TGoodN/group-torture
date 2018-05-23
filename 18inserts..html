@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuerry</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+    .click, .hide, .show, .toggle, .slideDown, .slideUp, .slideToggle, .fadeIn, .fadeOut, .addClass, .before, .after, .append, .html, .attr, .val, .text, .data{
+        background-color: gray;
+        outline: 1px solid black;
+        text-align: center;
+
+    }
+    h1{
+        text-align: center;
+    }
+    .slideUp p{
+        display: block;
+    }
+    .slideDown div{
+    background: #0675f5;
+    margin: 3px;
+    width: 80px;
+    height: 20px;
+    display: none;
+    float: left;
+    }
+    .slideToggle p {
+    width: 400px;
+  }
+  span {
+    color: rgb(134, 59, 122);
+    cursor: pointer;
+  }
+  .fadeIn div{
+    margin: 3px;
+    width: 80px;
+    display: none;
+    height: 80px;
+    float: left;
+  }
+  #one {
+    background: #f00;
+  }
+  #two {
+    background: #0f0;
+  }
+  #three {
+    background: #00f;
+  }
+  .fadeOut p{
+    font-size: 150%;
+    cursor: pointer;
+  }
+  .addClass p{
+    margin: 8px;
+    font-size: 16px;
+  }
+  .addClass .selected {
+    color: rgb(60, 241, 44);
+  }
+  .addClass .highlight {
+    background: rgb(22, 11, 68);
+  }
+  .before p {
+    background: rgb(255, 0, 221);
+  }
+  .after p {
+    background: rgb(0, 255, 106);
+  }
+  .append p {
+    background: rgb(36, 103, 228);
+  }
+  .html p {
+    margin: 8px;
+    font-size: 20px;
+    color: blue;
+    cursor: pointer;
+  }
+  .html b {
+    text-decoration: underline;
+  }
+  .html button {
+    cursor: pointer;
+  }
+  .attr p {
+    margin: 20px 0 0;
+  }
+  .attr b {
+    color: blue;
+  }
+  .val button {
+    margin: 4px;
+    cursor: pointer;
+  }
+  .val input {
+    margin: 4px;
+    color: rgb(112, 172, 142);
+  }
+  .text p {
+    color: blue;
+    margin: 8px;
+  }
+  .text b {
+    color: rgb(9, 255, 0);
+  }
+  .data div {
+    color: blue;
+  }
+  .data span {
+    color: rgb(37, 75, 6);
+  }
+  </style>
+</style>
+<body>
+    <div class="click">
+        <h1>Click and SlideUp</h1>
+        <div class="slideup">
+                <p>First Paragraph</p>
+                <p>Second Paragraph</p>
+                <p>Yet one more Paragraph</p>
+        </div>
+    </div>
+    <div class="hide">
+        <h1>Hide</h1>
+        <p>Hello</p>
+        <a href="#">Click to hide me too</a>
+        <p>Here is another paragraph</p>
+    </div>
+    <div class="show">
+        <h1>Show</h1>
+        <button>Show it</button>
+        <p style="display: none">How Yall Doin</p>
+    </div>
+    <div class="toggle">
+            <h1>Toggle</h1>
+            <button>Toggle</button>    
+            <p>Push Me</p>
+            <p style="display: none">Good Bye</p>
+    </div>
+    <div class="slideDown">
+            <h1>SlideDown</h1>
+                Click me!
+                <div></div>
+                <div></div>
+                <div></div>
+    </div>
+    <div class="slideToggle">
+            <h1>SlideToggle</h1>
+            <button>Toggle</button>
+            <p>
+                This is the paragraph to end all paragraphs.  You
+                should feel <em>lucky</em> to have seen such a paragraph in
+                your life.  Congratulations!
+            </p>
+    </div>
+    <div class="fadeIn">
+            <h1>FadeIn</h1>
+            <span>Click here...</span>
+                <div id="one"></div>
+                <div id="two"></div>
+                <div id="three"></div>
+    </div>
+    <div class="fadeOut">
+            <h1>FadeOut</h1>
+            <p>
+              If you click on this paragraph
+              you'll see it just fade away.
+            </p>
+             
+    </div>
+    <div class="addClass">
+            <h1>AddClass</h1>
+            <p>Hello</p>
+            <p>and</p>
+            <p>C-Ya</p>
+ 
+    </div>
+    <div class="before">
+            <h1>Before</h1>
+            <p> is what I said...WAKE UP</p>
+
+    </div>
+    <div class="after">
+            <h1>After</h1>
+            <p>Should have listened the first time: </p>
+    </div>
+    <div class="append">
+            <h1>Append</h1>
+            <p>If you wont let me out, i'll: </p>
+    </div>
+    <div class="html">
+            <h1>HTML</h1>
+            <p>
+              <b>Click</b> to change the <span id="tag">html</span>
+            </p>
+            <p>
+              to a <span id="text">text</span> node.
+            </p>
+            <p>
+              This <button name="nada">button</button> does nothing.
+            </p>
+    </div>
+    <div class="attr">
+            <h1>Attr</h1>
+            <input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p></p>
+    </div>
+    <div class="val">
+            <h1>Val</h1>
+            <div>
+              <button>Feed</button>
+              <button>the</button>
+              <button>Input</button>
+            </div>
+            <input type="text" value="click a button">
+    </div>
+    <div class="text">
+            <h1>Text</h1>
+            <p><b>Test</b> Paragraph.</p>
+            <p></p>
+    </div>
+    <div class="data">
+            <h1>Data</h1>
+            <div>
+              The values stored were
+              <span></span>
+              and
+              <span></span>
+            </div>
+    </div>
+</body>
+<script>
+    // .click
+    $( "div.slideup p" ).click(function() {
+  $( this ).slideUp();
+});
+// .hide
+$( "div.hide p" ).hide();
+$( "div.hide a" ).click(function( event ) {
+  event.preventDefault();
+  $( this ).hide();
+});
+// .show
+$( "div.show button" ).click(function() {
+  $( "div.show p" ).show( "slow" );
+});
+// .toggle
+$( "div.toggle button" ).click(function() {
+  $( "div.toggle p" ).toggle();
+});
+// .slideDown
+$( "div.slideDown" ).click(function () {
+  if ( $( "div.slideDown div:first" ).is( ":hidden" ) ) {
+    $( "div.slideDown div" ).slideDown( "slow" );
+  } else {
+    $( "div.slideDown div" ).hide();
+  }
+});
+// .slideToggle
+$( "div.slideToggle button" ).click(function() {
+  $( "div.slideToggle p" ).slideToggle( "slow" );
+});
+// .fadeIn
+$( "div.fadeIn" ).click(function() {
+  $( "div:hidden:first" ).fadeIn( "slow" );
+});
+// .fadeOut
+$( "div.fadeOut p" ).click(function() {
+  $( "div.fadeOut p" ).fadeOut( "slow" );
+});
+// .addClass
+$( "div.addClass p:last" ).addClass( "selected highlight" );
+// .before
+$( "div.before p" ).before( "<b>HoowwwwDDDyyyyyy</b>" );
+// .after
+$( "div.after p" ).after( "<b>Duh</b>" );
+// .append
+$( "div.append p" ).append( "<strong>Breaking Out</strong>" );
+// .html
+$( "div.html p" ).click(function() {
+  var htmlString = $( this ).html();
+  $( this ).text( htmlString );
+});
+// .attr
+$( "div.attr input" )
+  .change(function() {
+    var $input = $( this );
+    $( "div.attr p" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+      ".prop( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+      ".is( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
+  })
+  .change();
+  // .val
+  $( "div.val button" ).click(function() {
+  var text = $( this ).text();
+  $( "div.val input" ).val( text );
+});
+// .text
+var str = $( "div.text p:first" ).text();
+$( "div.text p:last" ).html( str );
+// .data
+$( "div.data div" ).data( "div.data test", { first: 16, last: "pizza!" } );
+$( "div.data span:first" ).text( $( "div.data div" ).data( "div.data test" ).first );
+$( "div.data span:last" ).text( $( "div.data div" ).data( "div.data test" ).last );
+</script>
+</html>
